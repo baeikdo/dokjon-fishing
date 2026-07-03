@@ -1,55 +1,23 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f766e">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>주전 낚시 일지</title>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f766e"><link rel="manifest" href="manifest.json"><title>독존 낚시 일지</title>
 <style>
-:root{--bg:#f3f7f6;--card:#fff;--text:#10201d;--muted:#64748b;--main:#0f766e;--line:#dbe7e5;--danger:#dc2626;--soft:#e6f4f1;--warn:#fff7ed}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-header{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,var(--main),#0ea5a3);color:white;padding:18px 16px 14px;box-shadow:0 2px 10px #0002}
-h1{font-size:21px;margin:0 0 4px}header p{margin:0;font-size:13px;opacity:.9}main{padding:14px 12px 90px;max-width:920px;margin:auto}
-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:white;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
-nav button{border:0;background:white;color:var(--muted);padding:9px 2px;font-size:12px;border-radius:12px}nav button.active{background:var(--soft);color:var(--main);font-weight:800}
-.screen{display:none}.screen.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 3px 12px #0f172a0d}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}label{font-size:12px;color:var(--muted);font-weight:700;display:block;margin-bottom:5px}
-input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 10px;font-size:15px;background:white;color:var(--text)}textarea{min-height:82px;resize:vertical}
-.btn{border:0;border-radius:14px;padding:12px 13px;font-size:15px;font-weight:800;background:var(--main);color:white}.btn.light{background:var(--soft);color:var(--main)}.btn.dark{background:#334155}.btn.danger{background:var(--danger)}
-.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row .btn{flex:1}.pill{display:inline-flex;padding:6px 9px;border-radius:999px;background:var(--soft);color:#115e59;font-size:12px;font-weight:800;margin:3px 3px 0 0}
-.entry-title{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.entry-title h3{margin:0;font-size:17px}.entry-title small{color:var(--muted);white-space:nowrap}
-.meta{font-size:13px;color:#334155;line-height:1.55;margin:8px 0}.photo{width:100%;max-height:240px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-top:8px}
-.empty{text-align:center;color:var(--muted);padding:30px 8px}.notice{background:var(--warn);border:1px solid #fed7aa;color:#7c2d12;border-radius:14px;padding:10px;font-size:13px;line-height:1.45}
-.stat{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px dashed var(--line);padding:9px 0;font-size:14px}.bar{height:9px;background:var(--soft);border-radius:99px;overflow:hidden;margin-top:5px}.bar span{display:block;height:100%;background:var(--main)}
-@media (min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}.wide2{grid-column:span 2}}
-</style>
-</head>
-<body>
-<header><h1>🎣 주전 낚시 일지</h1><p>물때 · 포인트 · 루어 · 조과를 쌓는 개인 기록장</p></header>
-<main>
-<section id="write" class="screen active">
-<div class="card notice">기록은 이 휴대폰 브라우저 저장소에 보관됩니다. 가끔 “백업 내보내기”를 해두세요.</div>
+body{margin:0;font-family:system-ui;background:#f3f7f6;color:#10201d}header{background:#0f766e;color:white;padding:18px 16px}h1{margin:0;font-size:22px}main{padding:12px 12px 80px}.card{background:white;border-radius:18px;padding:14px;margin-bottom:12px;border:1px solid #dbe7e5;box-shadow:0 3px 12px #0001}.ocr{background:#ecfeff;border-color:#a5f3fc}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}label{font-size:12px;font-weight:800;color:#64748b;display:block;margin-bottom:5px}input,select,textarea{width:100%;box-sizing:border-box;border:1px solid #dbe7e5;border-radius:12px;padding:11px;font-size:15px}textarea{min-height:78px}.btn{border:0;border-radius:14px;padding:12px;font-weight:900;background:#0f766e;color:white}.light{background:#e6f4f1;color:#0f766e}.row{display:flex;gap:8px}.row>*{flex:1}.tab{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid #dbe7e5}.tab button{padding:13px 0;border:0;background:white}.tab .on{background:#e6f4f1;color:#0f766e;font-weight:900}.screen{display:none}.screen.on{display:block}.pill{display:inline-block;background:#e6f4f1;color:#0f766e;border-radius:99px;padding:5px 8px;margin:2px;font-size:12px;font-weight:800}.photo{width:100%;border-radius:12px;margin-top:8px}.meta{font-size:13px;line-height:1.5;color:#334155}.stat{display:flex;justify-content:space-between;border-bottom:1px dashed #dbe7e5;padding:9px 0}
+</style></head><body><header><h1>🎣 독존 낚시 일지 v0.2</h1><p>캡처 사진 자동입력</p></header><main>
+<section id="write" class="screen on">
+<div class="card ocr"><b>📸 물때/날씨앱 캡처 자동입력</b><p class="meta">정자항·주전 물때, 바람/파고 캡처를 선택하고 자동입력을 누르세요.</p><input id="ocrImage" type="file" accept="image/*"><div class="row" style="margin-top:8px"><button class="btn" onclick="runOcr()">사진 읽고 자동입력</button><button class="btn light" onclick="ocrText.style.display='block'">읽은 글자</button></div><div id="ocrStatus" class="meta" style="margin-top:8px"></div><textarea id="ocrText" style="display:none;margin-top:8px"></textarea></div>
 <form id="form" class="card"><input type="hidden" id="editId"><div class="grid">
-<div class="wide2"><label>날짜</label><input id="date" type="date" required></div><div><label>출항시간</label><input id="startTime" type="time"></div><div><label>철수시간</label><input id="endTime" type="time"></div>
-<div class="wide2"><label>포인트</label><input id="point" list="pointList" placeholder="이득등대 앞"></div><div><label>물때</label><select id="tide"><option value="">선택</option></select></div><div><label>수심</label><input id="depth" placeholder="18m"></div>
-<div><label>날씨</label><input id="weather" placeholder="맑음/흐림/비"></div><div><label>바람</label><input id="wind" placeholder="북동 3m/s"></div><div><label>파고</label><input id="wave" placeholder="0.5m"></div><div><label>물색</label><input id="waterColor" placeholder="맑음/탁함"></div>
-<div><label>어종</label><input id="fish" list="fishList" placeholder="농어"></div><div><label>크기</label><input id="size" placeholder="68cm"></div><div><label>마릿수</label><input id="count" type="number" min="0" value="0"></div><div><label>입질시간</label><input id="biteTime" type="time"></div>
-<div><label>루어 종류</label><input id="lureType" list="lureList" placeholder="메탈"></div><div><label>루어 무게</label><input id="lureWeight" placeholder="80g"></div><div><label>루어 색상</label><input id="lureColor" placeholder="블루/핑크/실버"></div><div><label>베이트 유무</label><select id="bait"><option value="">선택</option><option>있음</option><option>없음</option><option>모름</option></select></div>
-<div class="wide2"><label>갈매기/보일링</label><select id="boiling"><option value="">선택</option><option>갈매기 있음</option><option>보일링 있음</option><option>둘 다 있음</option><option>없음</option></select></div><div class="wide2"><label>사진</label><input id="photo" type="file" accept="image/*"></div>
-<div class="full"><label>메모</label><textarea id="memo" placeholder="멸치 뛰고, 바닥 찍고 감을 때 입질."></textarea></div>
-</div><div class="row" style="margin-top:12px"><button class="btn" type="submit">저장하기</button><button class="btn light" type="button" onclick="resetForm()">새 기록</button></div></form>
-</section>
-<section id="list" class="screen"><div class="card"><div class="grid">
-<div class="wide2"><label>어종 검색</label><input id="sFish" placeholder="농어"></div><div class="wide2"><label>포인트 검색</label><input id="sPoint" placeholder="이득등대"></div><div><label>물때</label><select id="sTide"><option value="">전체</option></select></div><div><label>월별</label><input id="sMonth" type="month"></div><div class="wide2"><label>전체 검색</label><input id="sText" placeholder="루어, 메모, 날씨 등"></div>
-</div><div class="row" style="margin-top:10px"><button class="btn light" onclick="clearSearch()">검색 초기화</button><button class="btn dark" onclick="exportData()">백업 내보내기</button></div><div class="row" style="margin-top:8px"><label class="btn light" style="text-align:center;cursor:pointer">백업 불러오기<input id="importFile" type="file" accept="application/json" style="display:none"></label></div></div><div id="entries"></div></section>
-<section id="stats" class="screen"><div class="card"><h3 style="margin:0 0 8px">📊 조과 통계</h3><div id="statsBox"></div></div></section>
-<section id="points" class="screen"><div class="card"><h3 style="margin:0 0 8px">📍 포인트별 기록</h3><div id="pointsBox"></div></div></section>
-</main>
-<nav><button class="active" onclick="showScreen('write',this)">기록</button><button onclick="showScreen('list',this)">목록</button><button onclick="showScreen('stats',this)">통계</button><button onclick="showScreen('points',this)">포인트</button></nav>
-<datalist id="fishList"><option>농어</option><option>삼치</option><option>방어</option><option>참돔</option><option>쏨뱅이</option><option>열기</option><option>전갱이</option></datalist>
-<datalist id="pointList"><option>주전항 앞</option><option>이득등대 앞</option><option>이득등대 동쪽</option><option>홍상도</option><option>주전~이득등대 사이</option></datalist>
-<datalist id="lureList"><option>메탈</option><option>미노우</option><option>바이브</option><option>타이라바</option><option>지그헤드</option></datalist>
-<script src="app.js"></script>
-</body></html>
+<div><label>날짜</label><input id="date" type="date"></div><div><label>물때</label><select id="tide"><option value="">선택</option></select></div>
+<div><label>출항시간</label><input id="startTime" type="time"></div><div><label>철수시간</label><input id="endTime" type="time"></div>
+<div><label>포인트</label><input id="point" list="points" placeholder="이득등대 앞"></div><div><label>수심</label><input id="depth" placeholder="18m"></div>
+<div><label>날씨</label><input id="weather" placeholder="흐림"></div><div><label>바람</label><input id="wind" placeholder="남서 1.4m/s"></div>
+<div><label>파고</label><input id="wave" placeholder="0.8m"></div><div><label>물색</label><input id="waterColor" placeholder="맑음/탁함"></div>
+<div><label>어종</label><input id="fish" list="fishs" placeholder="농어"></div><div><label>크기</label><input id="size" placeholder="68cm"></div>
+<div><label>마릿수</label><input id="count" type="number" min="0" value="0"></div><div><label>입질시간</label><input id="biteTime" type="time"></div>
+<div><label>루어 종류</label><input id="lureType" list="lures" placeholder="메탈"></div><div><label>루어 무게</label><input id="lureWeight" placeholder="80g"></div>
+<div><label>루어 색상</label><input id="lureColor" placeholder="블루"></div><div><label>베이트 유무</label><select id="bait"><option value="">선택</option><option>있음</option><option>없음</option><option>모름</option></select></div>
+<div><label>갈매기/보일링</label><select id="boiling"><option value="">선택</option><option>갈매기 있음</option><option>보일링 있음</option><option>둘 다 있음</option><option>없음</option></select></div><div><label>사진</label><input id="photo" type="file" accept="image/*" capture="environment"></div>
+<div class="full"><label>메모</label><textarea id="memo"></textarea></div></div><div class="row" style="margin-top:12px"><button class="btn">🎣 저장</button><button type="button" class="btn light" onclick="resetForm()">새 기록</button></div></form></section>
+<section id="list" class="screen"><div class="card"><div class="grid"><input id="sFish" placeholder="어종"><input id="sPoint" placeholder="포인트"><select id="sTide"><option value="">물때 전체</option></select><input id="sMonth" type="month"><input class="full" id="sText" placeholder="전체 검색"></div><div class="row" style="margin-top:8px"><button class="btn light" onclick="clearSearch()">초기화</button><button class="btn" onclick="exportData()">백업</button></div></div><div id="entries"></div></section>
+<section id="stats" class="screen"><div class="card"><h3>📊 통계</h3><div id="statsBox"></div></div></section><section id="pointsSec" class="screen"><div class="card"><h3>📍 포인트</h3><div id="pointsBox"></div></div></section></main>
+<nav class="tab"><button class="on" onclick="go('write',this)">기록</button><button onclick="go('list',this)">목록</button><button onclick="go('stats',this)">통계</button><button onclick="go('pointsSec',this)">포인트</button></nav>
+<datalist id="points"><option>주전항 앞</option><option>이득등대 앞</option><option>홍상도</option><option>정자항</option></datalist><datalist id="fishs"><option>농어</option><option>삼치</option><option>방어</option><option>참돔</option></datalist><datalist id="lures"><option>메탈</option><option>미노우</option><option>바이브</option></datalist>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script><script src="app.js"></script></body></html>
